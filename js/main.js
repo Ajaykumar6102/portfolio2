@@ -22,3 +22,30 @@ document.getElementById('contact-form') .addEventListener('submit',function (eve
     });
     document.getElementById('contact-form').reset();
 });
+
+// Theme Toggle Logic
+const themeToggleBtn = document.getElementById('theme-toggle');
+const currentTheme = localStorage.getItem('theme') || 'dark'; // Default to dark theme
+
+// Apply the saved theme on load
+if (currentTheme === 'light') {
+    document.documentElement.setAttribute('data-theme', 'light');
+    themeToggleBtn.innerText = '☀️';
+} else {
+    document.documentElement.setAttribute('data-theme', 'dark');
+    themeToggleBtn.innerText = '🌙';
+}
+
+themeToggleBtn.addEventListener('click', () => {
+    let theme = document.documentElement.getAttribute('data-theme');
+    
+    if (theme === 'dark') {
+        document.documentElement.setAttribute('data-theme', 'light');
+        localStorage.setItem('theme', 'light');
+        themeToggleBtn.innerText = '☀️';
+    } else {
+        document.documentElement.setAttribute('data-theme', 'dark');
+        localStorage.setItem('theme', 'dark');
+        themeToggleBtn.innerText = '🌙';
+    }
+});

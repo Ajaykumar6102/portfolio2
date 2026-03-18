@@ -1,46 +1,77 @@
+:root {
+    --bg-color: #f3f6fa;
+    --text-color: #212529;
+    --primary-color: #0dcaf0; /* Info color */
+    --secondary-color: #198754; /* Green */
+    --nav-bg: rgba(255, 255, 255, 0.9);
+    --card-bg: #ffffff;
+    --card-border: rgba(0, 0, 0, 0.1);
+    --hover-shadow: rgba(0, 0, 0, 0.15);
+    --section-bg-alt: #ffffff;
+    --accent-color: #ff0088;
+    --nav-link-color: #212529;
+}
+
+[data-theme="dark"] {
+    --bg-color: #0f172a; /* Dark Navy/Slate */
+    --text-color: #f8fafc;
+    --primary-color: #00ffff; /* Cyan */
+    --secondary-color: #10b981; /* Emerald */
+    --nav-bg: rgba(15, 23, 42, 0.85); /* Slate transparent */
+    --card-bg: rgba(30, 41, 59, 0.7); /* Slightly lighter slate */
+    --card-border: rgba(255, 255, 255, 0.1);
+    --hover-shadow: #00ffff;
+    --section-bg-alt: #1e293b;
+    --nav-link-color: #f8fafc;
+}
+
 body{
     font-family: 'Poppins', sans-serif;
-    background-color: green;
-    color: whitesmoke;
+    background-color: var(--bg-color);
+    color: var(--text-color);
+    transition: background-color 0.3s ease, color 0.3s ease;
 }
 nav{
-    color: #fff;
-    background-color: rgba(255,255,255,0.06);
-    border: 1px solid #ffffff1a;
+    color: var(--text-color);
+    background-color: var(--nav-bg);
+    border: 1px solid var(--card-border);
     width: 100%;
     padding: 32px;
     backdrop-filter: blur(10px);
+    transition: background-color 0.3s ease;
 }
 .nav-link{
-    color: white;
+    color: var(--nav-link-color);
+    font-weight: 500;
 }
 
 .icon{
     width: 30px;
+    transition: box-shadow 0.3s ease;
 }
 .icon:hover{
-    box-shadow: 0 0 20px #00ffff;
+    box-shadow: 0 0 20px var(--primary-color);
 }
 .btn:hover{
-    box-shadow: 0 0 20px #00ffff;
+    box-shadow: 0 0 20px var(--primary-color);
 }
 .skills-padding {
     padding: 60px 0;
 }
 .card:hover{
-    background-color: rgba(var(--bs-dark-rgb),var(--bs-bg-opacity));
+    background-color: var(--card-bg);
     transform: scale(1.05);
-    box-shadow: 0 10px 20px rgba(0,0,0,.12), 0 4px 8px #00ffff;
+    box-shadow: 0 10px 20px var(--hover-shadow), 0 4px 8px var(--primary-color);
 }
 .skill-card:hover h5{
-    color:#00ffff;
-    text-shadow:0 2px 2px #ff0088;
+    color: var(--primary-color);
+    text-shadow: 0 2px 2px var(--accent-color);
 }
 
 .card{
-    color: #fff;
-    background-color: rgba(255,255,255,0.06);
-    border: 1px solid #ffffff1a;
+    color: var(--text-color);
+    background-color: var(--card-bg);
+    border: 1px solid var(--card-border);
     width: 100%;
     padding: 32px;
     backdrop-filter: blur(10px);
@@ -51,26 +82,27 @@ nav{
 }
 
 span{
-    color:#00ffff;
+    color: var(--primary-color);
 }
 .nav-link:hover{
-    color: #fff;
-    text-shadow:0 0 10px  #00ffff;
-    text-decoration: underline 2.5px #00ffff ;
+    color: var(--primary-color);
+    text-shadow: 0 0 10px var(--primary-color);
+    text-decoration: underline 2.5px var(--primary-color);
     transition-duration:250ms;
 }
 .about-bg{
-    color: #fff;
+    color: var(--text-color);
     margin: 40px auto;
-    background-color: rgba(255,255,255,0.06);
-    border: 1px solid rgba(255,255,255,0.1);
+    background-color: var(--section-bg-alt);
+    border: 1px solid var(--card-border);
     width: 100%;
     border-radius: 15px;
     padding: 32px;
     backdrop-filter: blur(10px);
+    transition: background-color 0.3s ease, color 0.3s ease;
 }
 .about-bg h4{
-    color: #00ffff;
+    color: var(--primary-color);
 }
 .head{
     background-image: url(../images/profile-pic\(3\).pdf);
@@ -96,7 +128,7 @@ span{
     position:absolute;
     width: 300px;
     height: 400px;
-    background-image: conic-gradient(transparent,transparent,transparent,#d400d4);
+    background-image: conic-gradient(transparent,transparent,transparent,var(--accent-color));
     animation: animate 4s linear infinite;
     animation-delay: 2s;
 }
@@ -111,7 +143,7 @@ span{
 .skill-card span{
     position: absolute;
     inset: 3px;
-    background:#020333;
+    background: var(--card-bg);
     border-radius: 10px;
     z-index: 1;
 }
@@ -121,18 +153,19 @@ span{
     
 }
 #skills h4{
-    color:#00ccff;
+    color: var(--primary-color);
     
 }
 .contact-bg{
-    color: #fff;
+    color: var(--text-color);
     margin: 40px auto;
-    background-color: rgba(255,255,255,0.06);
-    border: 1px solid rgba(255,255,255,0.1);
+    background-color: var(--section-bg-alt);
+    border: 1px solid var(--card-border);
     width: 100%;
     border-radius: 15px;
     padding: 32px;
     backdrop-filter: blur(10px);
+    transition: background-color 0.3s ease, color 0.3s ease;
 }
 .circles{
     position: absolute;
